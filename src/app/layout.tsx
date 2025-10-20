@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Festa Santa Luzia",
-  description: "Festa da paróquia Santa Luzia - Tubarão SC",
+  title: "Festa de Santa Luzia 2025 | Paróquia Santa Luzia - Tubarão/SC",
+  description:
+    "Venha celebrar a Festa de Santa Luzia 2025 na Paróquia Santa Luzia em Tubarão/SC. Programação completa, barracas, sorteios e muito mais!",
+  keywords:
+    "Festa Santa Luzia, Paróquia, Tubarão, SC, Santa Catarina, Festa Religiosa, Católica",
+  openGraph: {
+    title: "Festa de Santa Luzia 2025",
+    description:
+      "Venha celebrar conosco! Programação, barracas e diversão para toda família.",
+    type: "website",
+    locale: "pt_BR",
+  },
 };
 
 export default function RootLayout({
@@ -23,9 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfair.variable} ${inter.variable} ${montserrat.variable} font-sans antialiased`}
       >
         {children}
       </body>
