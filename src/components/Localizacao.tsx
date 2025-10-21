@@ -3,7 +3,9 @@ import infofesta from "@/data/info";
 export default function Localizacao() {
   const { endereco, coordenadas } = infofesta;
   const enderecoCompleto = `${endereco.rua}, ${endereco.numero} - ${endereco.bairro}, ${endereco.cidade}/${endereco.estado}`;
-  const googleMapsUrl = `https://www.google.com/maps?q=${coordenadas.lat},${coordenadas.lng}`;
+
+  const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${coordenadas.lat},${coordenadas.lng}`;
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${coordenadas.lat},${coordenadas.lng}`;
   const wazeUrl = `https://waze.com/ul?ll=${coordenadas.lat},${coordenadas.lng}&navigate=yes`;
 
   return (
@@ -110,7 +112,7 @@ export default function Localizacao() {
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden h-[500px] lg:h-auto">
               <iframe
-                src={`https://www.google.com/maps?q=${coordenadas.lat},${coordenadas.lng}&output=embed`}
+                src={googleMapsEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "500px" }}
