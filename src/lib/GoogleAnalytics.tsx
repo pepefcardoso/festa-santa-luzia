@@ -1,11 +1,25 @@
-import Script from "next/script";
+'use client';
+import { useEffect } from 'react';
+import Script from 'next/script';
+import { usePathname } from 'next/navigation';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 export default function GoogleAnalytics() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+  const pathname = usePathname();
 
-  if (!GA_ID || process.env.NODE_ENV === "development") {
-    return null;
-  }
+  useEffect(() => {
+    if (!GA_ID) return;
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('config', GA_ID, { page_path: pathname });
+  }, [GA_ID, pathname]);
+
+  if (!GA_ID) return null;
 
   return (
     <>
