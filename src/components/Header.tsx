@@ -40,6 +40,7 @@ export default function Header() {
     { href: "#inicio", label: "Início" },
     { href: "#programacao", label: "Programação" },
     { href: "#barracas", label: "Barracas" },
+    { href: "#galeria", label: "Galeria" },
     { href: "#localizacao", label: "Localização" },
     { href: "#rifa", label: "Rifa" },
   ];

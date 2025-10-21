@@ -63,6 +63,14 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
+                                    href="#galeria"
+                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                >
+                                    Galeria
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     href="#localizacao"
                                     className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
