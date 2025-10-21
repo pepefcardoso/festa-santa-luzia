@@ -36,9 +36,9 @@ export interface Evento {
   
   export interface InfoFesta {
     titulo: string;
-    subtitulo: string;
     dataInicio: string;
     dataFim: string;
+    dataFrase: string;
     endereco: {
       rua: string;
       numero: string;

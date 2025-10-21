@@ -156,7 +156,7 @@ export default function Footer() {
                         <div className="flex gap-3">
                             {infofesta.redesSociais.facebook && (
                                 <a
-                                    href={`https://${infofesta.redesSociais.facebook}`}
+                                    href={infofesta.redesSociais.facebook}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 bg-asparagus rounded-full flex items-center justify-center hover:bg-yellow-green transition-colors duration-300"
@@ -173,7 +173,7 @@ export default function Footer() {
                             )}
                             {infofesta.redesSociais.instagram && (
                                 <a
-                                    href={`https://${infofesta.redesSociais.instagram}`}
+                                    href={infofesta.redesSociais.instagram}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 bg-asparagus rounded-full flex items-center justify-center hover:bg-yellow-green transition-colors duration-300"
@@ -190,7 +190,7 @@ export default function Footer() {
                             )}
                             {infofesta.redesSociais.youtube && (
                                 <a
-                                    href={`https://${infofesta.redesSociais.youtube}`}
+                                    href={infofesta.redesSociais.youtube}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 bg-asparagus rounded-full flex items-center justify-center hover:bg-yellow-green transition-colors duration-300"
@@ -216,9 +216,16 @@ export default function Footer() {
                             reservados.
                         </p>
                         <p className="text-parchment-300 text-sm text-center md:text-right">
-                            Desenvolvido com{" "}
-                            <span className="text-bittersweet-shimmer">❤️</span> para a
-                            comunidade
+                            Desenvolvido por{" "}
+                            <a
+                                href="https://wa.me/5548991155026"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline hover:text-white transition-colors"
+                            >
+                                Pedro Paulo
+                            </a>
+                            , para a comunidade
                         </p>
                     </div>
                 </div>

@@ -13,17 +13,13 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           <div className="inline-block mb-6">
             <span className="bg-parchment text-hunter-green font-display font-semibold px-6 py-2 rounded-full text-sm shadow-lg">
-              8 a 13 de Dezembro de 2025
+               {infofesta.dataFrase}
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 drop-shadow-2xl">
-            Festa de Santa Luzia
+            {infofesta.titulo}
           </h1>
-
-          <p className="text-2xl md:text-3xl text-parchment-200 font-display mb-4">
-            {infofesta.subtitulo}
-          </p>
 
           <p className="text-lg md:text-xl text-parchment-300 max-w-2xl mx-auto mb-12">
             Venha celebrar conosco! Programação especial, barracas deliciosas,

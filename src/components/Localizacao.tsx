@@ -4,8 +4,8 @@ export default function Localizacao() {
   const { endereco, coordenadas } = infofesta;
   const enderecoCompleto = `${endereco.rua}, ${endereco.numero} - ${endereco.bairro}, ${endereco.cidade}/${endereco.estado}`;
 
-  const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${coordenadas.lat},${coordenadas.lng}`;
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${coordenadas.lat},${coordenadas.lng}`;
+  const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${coordenadas.lat},${coordenadas.lng}&z=15&output=embed`;
+  const googleMapsUrl = `https://www.google.com/maps?q=${coordenadas.lat},${coordenadas.lng}`;
   const wazeUrl = `https://waze.com/ul?ll=${coordenadas.lat},${coordenadas.lng}&navigate=yes`;
 
   return (

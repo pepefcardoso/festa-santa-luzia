@@ -69,7 +69,7 @@ export default function Patrocinadores() {
                     >
                       {patrocinador.site ? (
                         <a
-                          href={`https://${patrocinador.site}`}
+                          href={patrocinador.site}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full flex-grow flex flex-col items-center justify-center"
