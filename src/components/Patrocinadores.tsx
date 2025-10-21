@@ -52,22 +52,20 @@ export default function Patrocinadores() {
                 </div>
 
                 <div
-                  className={`grid gap-6 ${
-                    categoria.id === "ouro"
+                  className={`grid gap-6 ${categoria.id === "ouro"
                       ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-2"
                       : categoria.id === "prata"
-                      ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
-                      : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                  }`}
+                        ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
+                        : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                    }`}
                 >
                   {patrocinadoresCategoria.map((patrocinador) => (
                     <div
                       key={patrocinador.id}
-                      className={`bg-parchment-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center ${
-                        categoria.id === "ouro"
+                      className={`bg-parchment-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center ${categoria.id === "ouro"
                           ? "min-h-[200px]"
                           : "min-h-[150px]"
-                      }`}
+                        }`}
                     >
                       {patrocinador.site ? (
                         <a
@@ -76,7 +74,6 @@ export default function Patrocinadores() {
                           rel="noopener noreferrer"
                           className="w-full flex-grow flex flex-col items-center justify-center"
                         >
-                          {/* ===== INÍCIO DA ALTERAÇÃO ===== */}
                           {patrocinador.logo ? (
                             <div className="relative w-full h-24">
                               <Image
@@ -96,11 +93,9 @@ export default function Patrocinadores() {
                           <p className="font-display font-semibold text-hunter-green mt-4">
                             {patrocinador.nome}
                           </p>
-                          {/* ===== FIM DA ALTERAÇÃO ===== */}
                         </a>
                       ) : (
                         <div className="w-full flex-grow flex flex-col items-center justify-center">
-                          {/* ===== INÍCIO DA ALTERAÇÃO (CÓDIGO REPETIDO PARA QUEM NÃO TEM SITE) ===== */}
                           {patrocinador.logo ? (
                             <div className="relative w-full h-24">
                               <Image

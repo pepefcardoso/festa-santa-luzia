@@ -3,9 +3,9 @@ import Hero from "@/components/Hero";
 import Programacao from "@/components/Programacao";
 import Barracas from "@/components/Barracas";
 import Localizacao from "@/components/Localizacao";
-// import Rifa from '@/components/Rifa';
+import Rifa from '@/components/Rifa';
 import Patrocinadores from "@/components/Patrocinadores";
-// import Footer from '@/components/Footer';
+import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
@@ -16,10 +16,10 @@ export default function HomePage() {
         <Programacao />
         <Barracas />
         <Localizacao />
-        {/* <Rifa /> */}
+        <Rifa />
         <Patrocinadores />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
