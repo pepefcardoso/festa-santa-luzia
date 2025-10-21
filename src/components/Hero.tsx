@@ -9,13 +9,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 border-4 border-parchment rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 border-4 border-parchment rounded-full"></div>
-        <div className="absolute top-1/3 right-1/4 w-24 h-24 border-4 border-parchment rotate-45"></div>
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center py-24 sm:pt-16 md:pt-0">
         <div className="max-w-4xl mx-auto">
           <div className="inline-block mb-6">
             <span className="bg-parchment text-hunter-green font-display font-semibold px-6 py-2 rounded-full text-sm shadow-lg">

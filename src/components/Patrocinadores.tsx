@@ -1,4 +1,5 @@
 import patrocinadores from "@/data/patrocinadores";
+import Image from "next/image";
 
 export default function Patrocinadores() {
   const categorias = [
@@ -62,7 +63,7 @@ export default function Patrocinadores() {
                   {patrocinadoresCategoria.map((patrocinador) => (
                     <div
                       key={patrocinador.id}
-                      className={`bg-parchment-800 rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center ${
+                      className={`bg-parchment-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center ${
                         categoria.id === "ouro"
                           ? "min-h-[200px]"
                           : "min-h-[150px]"
@@ -70,30 +71,53 @@ export default function Patrocinadores() {
                     >
                       {patrocinador.site ? (
                         <a
-                          href={patrocinador.site}
+                          href={`https://${patrocinador.site}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full h-full flex items-center justify-center"
+                          className="w-full flex-grow flex flex-col items-center justify-center"
                         >
-                          <div className="text-center">
-                            <div className="mb-4 mx-auto w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
+                          {/* ===== INÍCIO DA ALTERAÇÃO ===== */}
+                          {patrocinador.logo ? (
+                            <div className="relative w-full h-24">
+                              <Image
+                                src={`/${patrocinador.logo}`}
+                                alt={`Logo de ${patrocinador.nome}`}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <div className="w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
                               <span className="text-3xl text-white font-bold">
                                 {patrocinador.nome.charAt(0)}
                               </span>
                             </div>
-                            <p className="font-display font-semibold text-hunter-green">
-                              {patrocinador.nome}
-                            </p>
-                          </div>
+                          )}
+                          <p className="font-display font-semibold text-hunter-green mt-4">
+                            {patrocinador.nome}
+                          </p>
+                          {/* ===== FIM DA ALTERAÇÃO ===== */}
                         </a>
                       ) : (
-                        <div className="text-center">
-                          <div className="mb-4 mx-auto w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
-                            <span className="text-3xl text-white font-bold">
-                              {patrocinador.nome.charAt(0)}
-                            </span>
-                          </div>
-                          <p className="font-display font-semibold text-hunter-green">
+                        <div className="w-full flex-grow flex flex-col items-center justify-center">
+                          {/* ===== INÍCIO DA ALTERAÇÃO (CÓDIGO REPETIDO PARA QUEM NÃO TEM SITE) ===== */}
+                          {patrocinador.logo ? (
+                            <div className="relative w-full h-24">
+                              <Image
+                                src={`/${patrocinador.logo}`}
+                                alt={`Logo de ${patrocinador.nome}`}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <div className="w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
+                              <span className="text-3xl text-white font-bold">
+                                {patrocinador.nome.charAt(0)}
+                              </span>
+                            </div>
+                          )}
+                          <p className="font-display font-semibold text-hunter-green mt-4">
                             {patrocinador.nome}
                           </p>
                         </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,22 +28,22 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg py-2" : "bg-transparent py-4"
+        isScrolled
+          ? "bg-white/80 backdrop-blur-lg shadow-lg py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link href="#inicio" className="flex items-center space-x-3">
             <div className="w-12 h-12 relative">
-              <div className="w-full h-full bg-hunter-green rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SL</span>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <p className="font-serif font-bold text-xl text-hunter-green">
-                Santa Luzia
-              </p>
-              <p className="text-xs text-hunter-green-600">Tubarão/SC</p>
+              <Image
+                src="/images/logo.jpg"
+                alt="Logo Santa Luzia"
+                width={48}
+                height={48}
+                className="rounded-full"
+              />
             </div>
           </Link>
 

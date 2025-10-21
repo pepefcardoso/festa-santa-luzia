@@ -5,28 +5,28 @@ const patrocinadores: Patrocinador[] = [
         id: "101",
         nome: "Agro São Lucas",
         categoria: "apoiador",
-        logo: "patrocinadores/agro-sao-lucas.png",
+        logo: "images/patrocinadores/agro-sao-lucas.jpg",
         site: "instagram.com/agrosaolucas"
     },
     {
         id: "102",
         nome: "Farma Santa Luzia",
         categoria: "bronze",
-        logo: "patrocinadores/farma-santa-luzia.png",
+        logo: "images/patrocinadores/farma-santa-luzia.jpg",
         site: "instagram.com/farmaciasantaluzia"
     },
     {
         id: "103",
         nome: "Pati Milhas Viagens",
         categoria: "prata",
-        logo: "patrocinadores/pati-milhas.png",
+        logo: "images/patrocinadores/pati-milhas.jpg",
         site: "instagram.com/patimilhas"
     },
     {
         id: "104",
         nome: "Posto Santa Luzia",
         categoria: "ouro",
-        logo: "patrocinadores/posto-santa-luzia.png",
+        logo: "images/patrocinadores/posto-santa-luzia.jpg",
         site: "instagram.com/postosantaluzia"
     },
 ];
