@@ -52,69 +52,60 @@ export default function Patrocinadores() {
                 </div>
 
                 <div
-                  className={`grid gap-6 ${categoria.id === "ouro"
-                      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-2"
-                      : categoria.id === "prata"
-                        ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
-                        : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                  className={`grid gap-8 ${categoria.id === "ouro"
+                    ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    : categoria.id === "prata"
+                      ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                      : "grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
                     }`}
                 >
                   {patrocinadoresCategoria.map((patrocinador) => (
                     <div
                       key={patrocinador.id}
-                      className={`bg-parchment-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center ${categoria.id === "ouro"
-                          ? "min-h-[200px]"
-                          : "min-h-[150px]"
-                        }`}
+                      className={`transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center text-center`}
                     >
                       {patrocinador.site ? (
                         <a
                           href={patrocinador.site}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full flex-grow flex flex-col items-center justify-center"
+                          className="w-full"
                         >
                           {patrocinador.logo ? (
-                            <div className="relative w-full h-24">
+                            <div className="relative w-full h-32 rounded-lg shadow-lg overflow-hidden">
                               <Image
                                 src={`/${patrocinador.logo}`}
                                 alt={`Logo de ${patrocinador.nome}`}
                                 fill
-                                className="object-contain"
+                                className="object-cover"
                               />
                             </div>
                           ) : (
-                            <div className="w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
-                              <span className="text-3xl text-white font-bold">
+                            <div className="w-32 h-32 bg-hunter-green-800 rounded-full flex items-center justify-center shadow-lg">
+                              <span className="text-5xl text-white font-bold">
                                 {patrocinador.nome.charAt(0)}
                               </span>
                             </div>
                           )}
-                          <p className="font-display font-semibold text-hunter-green mt-4">
-                            {patrocinador.nome}
-                          </p>
                         </a>
                       ) : (
-                        <div className="w-full flex-grow flex flex-col items-center justify-center">
+                        <div className="w-full">
                           {patrocinador.logo ? (
-                            <div className="relative w-full h-24">
+                            <div className="relative w-full h-32 rounded-lg shadow-lg overflow-hidden">
                               <Image
                                 src={`/${patrocinador.logo}`}
                                 alt={`Logo de ${patrocinador.nome}`}
                                 fill
-                                className="object-contain"
+                                className="object-cover"
                               />
                             </div>
                           ) : (
-                            <div className="w-24 h-24 bg-hunter-green-800 rounded-full flex items-center justify-center">
-                              <span className="text-3xl text-white font-bold">
+                            <div className="w-32 h-32 bg-hunter-green-800 rounded-full flex items-center justify-center shadow-lg">
+                              <span className="text-5xl text-white font-bold">
                                 {patrocinador.nome.charAt(0)}
                               </span>
                             </div>
                           )}
-                          <p className="font-display font-semibold text-hunter-green mt-4">
-                            {patrocinador.nome}
-                          </p>
                         </div>
                       )}
                     </div>
@@ -129,12 +120,14 @@ export default function Patrocinadores() {
           <h3 className="text-3xl font-serif font-bold text-white mb-4">
             Seja um Patrocinador
           </h3>
-          <p className="text-parchment-200 mb-6 text-lg">
+          <p className="text-white mb-6 text-lg">
             Ajude a fazer nossa festa ainda melhor! Entre em contato para
             conhecer as cotas de patrocínio e os benefícios para sua empresa.
           </p>
           <a
-            href="tel:+5548999999999"
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_PHONE_CLEAN}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-hunter-green font-display font-semibold px-8 py-4 rounded-lg hover:bg-parchment transition-colors duration-300 shadow-md hover:shadow-lg"
           >
             Entre em Contato

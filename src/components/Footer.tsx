@@ -10,23 +10,27 @@ export default function Footer() {
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-12 h-12 relative">
+                        <Link href="#inicio" className="flex items-center space-x-4">
+                            <div className="w-16 h-16 relative">
                                 <Image
-                                    src="/images/logo.jpg"
+                                    src="/images/santa.png"
                                     alt="Logo Santa Luzia"
-                                    width={48}
-                                    height={48}
+                                    width={64}
+                                    height={64}
                                     className="rounded-full"
+                                    priority
                                 />
                             </div>
                             <div>
-                                <h3 className="font-serif font-bold text-xl text-parchment">
-                                    {infofesta.titulo}
-                                </h3>
+                                <span className="block font-display text-white text-lg leading-tight">
+                                    Capela
+                                </span>
+                                <span className="block font-display text-white text-xl font-bold leading-tight">
+                                    Santa Luzia
+                                </span>
                             </div>
-                        </div>
-                        <p className="text-parchment-300 text-sm leading-relaxed">
+                        </Link>
+                        <p className="text-white pt-4 text-sm leading-relaxed">
                             Celebrando a fé e fortalecendo nossa comunidade através da festa
                             de Santa Luzia.
                         </p>
@@ -40,7 +44,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#inicio"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Início
                                 </Link>
@@ -48,7 +52,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#programacao"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Programação
                                 </Link>
@@ -56,7 +60,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#barracas"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Barracas
                                 </Link>
@@ -64,7 +68,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#galeria"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Galeria
                                 </Link>
@@ -72,7 +76,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#localizacao"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Localização
                                 </Link>
@@ -80,7 +84,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#rifa"
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200 text-sm"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
                                     Rifa
                                 </Link>
@@ -106,7 +110,7 @@ export default function Footer() {
                                     <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <span className="text-parchment-300">
+                                <span className="text-white">
                                     {infofesta.endereco.rua}, {infofesta.endereco.numero}
                                     <br />
                                     {infofesta.endereco.bairro} - {infofesta.endereco.cidade}/
@@ -127,7 +131,7 @@ export default function Footer() {
                                 </svg>
                                 <a
                                     href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200"
                                 >
                                     {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                                 </a>
@@ -146,7 +150,7 @@ export default function Footer() {
                                 </svg>
                                 <a
                                     href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
-                                    className="text-parchment-300 hover:text-yellow-green transition-colors duration-200"
+                                    className="text-white hover:text-yellow-green transition-colors duration-200"
                                 >
                                     {process.env.NEXT_PUBLIC_CONTACT_PHONE}
                                 </a>
@@ -158,7 +162,7 @@ export default function Footer() {
                         <h4 className="font-display font-semibold text-lg text-parchment mb-4">
                             Redes Sociais
                         </h4>
-                        <p className="text-parchment-300 text-sm mb-4">
+                        <p className="text-white text-sm mb-4">
                             Siga-nos para ficar por dentro de todas as novidades!
                         </p>
                         <div className="flex gap-3">
@@ -219,11 +223,11 @@ export default function Footer() {
 
                 <div className="border-t border-hunter-green-700 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-parchment-300 text-sm text-center md:text-left">
+                        <p className="text-white text-sm text-center md:text-left">
                             © {anoAtual} Paróquia Santa Luzia - Tubarão/SC. Todos os direitos
                             reservados.
                         </p>
-                        <p className="text-parchment-300 text-sm text-center md:text-right">
+                        <p className="text-white text-sm text-center md:text-right">
                             Desenvolvido por{" "}
                             <a
                                 href="https://wa.me/5548991155026"

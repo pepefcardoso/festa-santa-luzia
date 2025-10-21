@@ -102,7 +102,7 @@ export default function Galeria() {
                                                     <p className="text-2xl font-serif font-bold">
                                                         Festa {edicao.ano}
                                                     </p>
-                                                    <p className="text-sm text-parchment-300">
+                                                    <p className="text-sm text-white">
                                                         {edicao.fotos.length} fotos
                                                     </p>
                                                 </div>
@@ -136,7 +136,7 @@ export default function Galeria() {
                                                     <p className="text-white font-display font-semibold text-sm mb-1">
                                                         {foto.titulo}
                                                     </p>
-                                                    <p className="text-parchment-300 text-xs">
+                                                    <p className="text-white text-xs">
                                                         {foto.categoria}
                                                     </p>
                                                 </div>
@@ -221,7 +221,7 @@ export default function Galeria() {
                             <h3 className="text-white font-serif font-bold text-2xl mb-2">
                                 {fotoSelecionada.titulo}
                             </h3>
-                            <div className="flex items-center gap-4 text-parchment-300">
+                            <div className="flex items-center gap-4 text-white">
                                 <span className="flex items-center gap-1">
                                     <svg
                                         className="w-4 h-4"

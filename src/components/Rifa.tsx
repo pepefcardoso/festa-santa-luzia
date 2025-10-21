@@ -85,7 +85,7 @@ export default function Rifa() {
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 drop-shadow-lg">
                         Participe da Rifa
                     </h2>
-                    <p className="text-xl text-parchment-200 max-w-2xl mx-auto">
+                    <p className="text-xl text-white max-w-2xl mx-auto">
                         Concorra a prêmios incríveis e ajude nossa comunidade!
                     </p>
                 </div>

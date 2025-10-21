@@ -52,22 +52,32 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+          isScrolled
             ? "bg-white/80 backdrop-blur-lg shadow-lg py-2"
             : "bg-transparent py-4"
-          }`}
+        }`}
       >
         <nav className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <Link href="#inicio" className="flex items-center space-x-3">
-              <div className="w-12 h-12 relative">
+            <Link href="#inicio" className="flex items-center space-x-4">
+              <div className="w-16 h-16 relative">
                 <Image
-                  src="/images/logo.jpg"
+                  src="/images/santa.png"
                   alt="Logo Santa Luzia"
-                  width={48}
-                  height={48}
+                  width={64}
+                  height={64}
                   className="rounded-full"
+                  priority
                 />
+              </div>
+              <div>
+                <span className="block font-display text-hunter-green text-lg leading-tight">
+                  Capela
+                </span>
+                <span className="block font-display text-hunter-green text-xl font-bold leading-tight">
+                  Santa Luzia
+                </span>
               </div>
             </Link>
 
@@ -116,8 +126,9 @@ export default function Header() {
       </button>
 
       <div
-        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
       >
         <div
           className="absolute inset-0 bg-black/50"
@@ -126,8 +137,9 @@ export default function Header() {
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
           <ul className="space-y-4 pt-16">
             {navLinks.map((link) => (

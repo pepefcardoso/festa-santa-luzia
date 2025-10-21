@@ -21,7 +21,7 @@ export default function Hero() {
             {infofesta.titulo}
           </h1>
 
-          <p className="text-lg md:text-xl text-parchment-300 max-w-2xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-12">
             Venha celebrar conosco! Programação especial, barracas deliciosas,
             música ao vivo e muito mais para toda a família.
           </p>
@@ -41,24 +41,24 @@ export default function Hero() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
               <div className="text-4xl mb-2">📅</div>
-              <p className="text-parchment font-display font-semibold mb-1">
+              <p className="text-white font-display font-semibold mb-1">
                 6 Dias
               </p>
-              <p className="text-parchment-300 text-sm">De celebração</p>
+              <p className="text-white text-sm">De celebração</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
               <div className="text-4xl mb-2">🎪</div>
-              <p className="text-parchment font-display font-semibold mb-1">
+              <p className="text-white font-display font-semibold mb-1">
                 13+ Barracas
               </p>
-              <p className="text-parchment-300 text-sm">Comidas e diversão</p>
+              <p className="text-white text-sm">Comidas e diversão</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
               <div className="text-4xl mb-2">🎵</div>
-              <p className="text-parchment font-display font-semibold mb-1">
+              <p className="text-white font-display font-semibold mb-1">
                 Shows ao Vivo
               </p>
-              <p className="text-parchment-300 text-sm">
+              <p className="text-white text-sm">
                 Música e entretenimento
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <Link href="#programacao">
           <svg
-            className="w-6 h-6 text-parchment"
+            className="w-6 h-6 text-white"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
