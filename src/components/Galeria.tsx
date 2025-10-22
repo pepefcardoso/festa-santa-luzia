@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { galeriaFotos } from "@/data/galeria";
+import SectionHeader from "./SectionHeader";
+import FotoCard from "./FotoCard";
+import Image from "next/image";
 
 export default function Galeria() {
     const [fotoSelecionada, setFotoSelecionada] = useState<{
@@ -31,23 +33,9 @@ export default function Galeria() {
     const navegarFoto = (direcao: "anterior" | "proxima") => {
         if (!fotoSelecionada) return;
 
-        const todasFotos: Array<{
-            url: string;
-            titulo: string;
-            ano: number;
-            categoria: string;
-        }> = [];
-
-        galeriaFotos.forEach((edicao) => {
-            edicao.fotos.forEach((foto) => {
-                todasFotos.push({
-                    url: foto.url,
-                    titulo: foto.titulo,
-                    ano: edicao.ano,
-                    categoria: foto.categoria,
-                });
-            });
-        });
+        const todasFotos = galeriaFotos.flatMap((edicao) =>
+            edicao.fotos.map((foto) => ({ ...foto, ano: edicao.ano }))
+        );
 
         const novoIndice =
             direcao === "proxima"
@@ -64,92 +52,70 @@ export default function Galeria() {
         if (e.key === "ArrowLeft") navegarFoto("anterior");
     };
 
+    let fotoCounter = 0;
+
     return (
         <section id="galeria" className="py-20 bg-white">
             <div className="container mx-auto px-4">
-                <h2 className="section-title">Galeria de Fotos</h2>
-                <p className="section-subtitle">
-                    Reviva os melhores momentos das edições anteriores
-                </p>
+                <SectionHeader
+                    title="Galeria de Fotos"
+                    subtitle="Reviva os melhores momentos das edições anteriores"
+                />
 
                 <div className="max-w-7xl mx-auto">
                     <div className="relative">
                         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-hunter-green-800 h-full"></div>
 
-                        {galeriaFotos.map((edicao, edicaoIndex) => {
-                            let fotoIndex = 0;
-                            galeriaFotos.slice(0, edicaoIndex).forEach((ed) => {
-                                fotoIndex += ed.fotos.length;
-                            });
-
-                            return (
-                                <div key={edicao.ano} className="mb-16 last:mb-0">
-                                    <div className="flex items-center justify-center mb-8">
-                                        <div className="relative z-10 bg-gradient-to-r from-hunter-green to-asparagus text-white px-8 py-4 rounded-full shadow-lg">
-                                            <div className="flex items-center gap-3">
-                                                <svg
-                                                    className="w-6 h-6"
-                                                    fill="none"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                                </svg>
-                                                <div>
-                                                    <p className="text-2xl font-serif font-bold">
-                                                        Festa {edicao.ano}
-                                                    </p>
-                                                    <p className="text-sm text-white">
-                                                        {edicao.fotos.length} fotos
-                                                    </p>
-                                                </div>
+                        {galeriaFotos.map((edicao) => (
+                            <div key={edicao.ano} className="mb-16 last:mb-0">
+                                <div className="flex items-center justify-center mb-8">
+                                    <div className="relative z-10 bg-gradient-to-r from-hunter-green to-asparagus text-white px-8 py-4 rounded-full shadow-lg">
+                                        <div className="flex items-center gap-3">
+                                            <svg
+                                                className="w-6 h-6"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <div>
+                                                <p className="text-2xl font-serif font-bold">
+                                                    Festa {edicao.ano}
+                                                </p>
+                                                <p className="text-sm text-white">
+                                                    {edicao.fotos.length} fotos
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                        {edicao.fotos.map((foto, index) => (
-                                            <div
-                                                key={index}
-                                                className="group relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                    {edicao.fotos.map((foto) => {
+                                        const currentIndex = fotoCounter++;
+                                        return (
+                                            <FotoCard
+                                                key={currentIndex}
+                                                foto={foto}
                                                 onClick={() =>
                                                     abrirLightbox(
                                                         foto.url,
                                                         foto.titulo,
                                                         edicao.ano,
                                                         foto.categoria,
-                                                        fotoIndex + index
+                                                        currentIndex
                                                     )
                                                 }
-                                            >
-                                                <Image
-                                                    src={foto.url}
-                                                    alt={foto.titulo}
-                                                    fill
-                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                />
-
-                                                <div className="absolute inset-0 bg-gradient-to-t from-hunter-green via-hunter-green/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                                                    <p className="text-white font-display font-semibold text-sm mb-1">
-                                                        {foto.titulo}
-                                                    </p>
-                                                    <p className="text-white text-xs">
-                                                        {foto.categoria}
-                                                    </p>
-                                                </div>
-
-                                                <div className="absolute top-2 right-2 bg-bittersweet-shimmer text-white text-xs font-display font-bold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                    📸
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                            />
+                                        );
+                                    })}
                                 </div>
-                            );
-                        })}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
