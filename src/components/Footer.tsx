@@ -83,10 +83,10 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href="#rifa"
+                                    href="#bingo"
                                     className="text-white hover:text-yellow-green transition-colors duration-200 text-sm"
                                 >
-                                    Rifa
+                                    Bingo
                                 </Link>
                             </li>
                         </ul>

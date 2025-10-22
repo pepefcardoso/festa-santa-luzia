@@ -31,10 +31,10 @@ export default function Hero() {
               Ver Programação
             </Link>
             <Link
-              href="#rifa"
+              href="#bingo"
               className="bg-white text-hunter-green font-display font-semibold px-8 py-4 rounded-lg hover:bg-parchment transition-colors duration-300 shadow-md hover:shadow-lg text-lg"
             >
-              Participar da Rifa
+              Participar do Bingo
             </Link>
           </div>
 

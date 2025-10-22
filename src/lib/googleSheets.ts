@@ -1,7 +1,7 @@
-import type { InscricaoRifa } from "@/types";
+import type { InscricaoBingo } from "@/types";
 
-export async function enviarInscricaoRifa(
-  dados: InscricaoRifa
+export async function enviarInscricaoBingo(
+  dados: InscricaoBingo
 ): Promise<{ success: boolean; message: string }> {
   try {
     const url = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;

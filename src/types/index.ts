@@ -26,12 +26,11 @@ export interface Patrocinador {
   categoria: "ouro" | "prata" | "bronze" | "apoiador";
 }
 
-export interface InscricaoRifa {
+export interface InscricaoBingo {
   nome: string;
-  email: string;
+  endereco: string;
   telefone: string;
   quantidade: number;
-  mensagem?: string;
 }
 
 export interface InfoFesta {

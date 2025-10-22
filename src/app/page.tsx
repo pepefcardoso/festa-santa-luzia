@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Programacao from "@/components/Programacao";
 import Barracas from "@/components/Barracas";
 import Localizacao from "@/components/Localizacao";
-import Rifa from '@/components/Rifa';
+import Bingo from '@/components/Bingo';
 import Patrocinadores from "@/components/Patrocinadores";
 import Footer from '@/components/Footer';
 import Galeria from "@/components/Galeria";
@@ -18,7 +18,7 @@ export default function HomePage() {
         <Barracas />
         <Galeria />
         <Localizacao />
-        <Rifa />
+        <Bingo />
         <Patrocinadores />
       </main>
       <Footer />

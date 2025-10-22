@@ -42,7 +42,7 @@ export default function Header() {
     { href: "#barracas", label: "Barracas" },
     { href: "#galeria", label: "Galeria" },
     { href: "#localizacao", label: "Localização" },
-    { href: "#rifa", label: "Rifa" },
+    { href: "#bingo", label: "Bingo" },
   ];
 
   const handleLinkClick = () => {
@@ -93,8 +93,8 @@ export default function Header() {
                 </li>
               ))}
               <li>
-                <Link href="#rifa" className="btn-primary text-sm">
-                  Participe da Rifa
+                <Link href="#bingo" className="btn-primary text-sm">
+                  Participe do Bingo
                 </Link>
               </li>
             </ul>
@@ -155,11 +155,11 @@ export default function Header() {
             ))}
             <li className="pt-4">
               <Link
-                href="#rifa"
+                href="#bingo"
                 className="btn-primary block text-center"
                 onClick={handleLinkClick}
               >
-                Participe da Rifa
+                Participe do Bingo
               </Link>
             </li>
           </ul>

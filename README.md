@@ -9,7 +9,7 @@ Site institucional desenvolvido em Next.js 15 com TypeScript e Tailwind CSS v4, 
 - ✨ Programação completa dos eventos
 - 🎪 Informações sobre todas as barracas
 - 📍 Localização e mapas interativos
-- 🎟️ Sistema de inscrição para rifa (integrado com Google Sheets)
+- 🎟️ Sistema de inscrição para bingo (integrado com Google Sheets)
 - 🤝 Galeria de patrocinadores
 - 📱 Design responsivo e moderno
 
@@ -83,7 +83,7 @@ src/
 │   ├── Programacao.tsx  # Lista de eventos
 │   ├── Barracas.tsx     # Grade de barracas
 │   ├── Localizacao.tsx  # Mapa e endereço
-│   ├── Rifa.tsx         # Formulário de rifa
+│   ├── Bingo.tsx         # Formulário de bingo
 │   ├── Patrocinadores.tsx # Logos de patrocinadores
 │   └── Footer.tsx       # Rodapé
 ├── data/
